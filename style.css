@@ -1,0 +1,205 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS (RESET)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================================
+   ESTRUTURA DOS CONTAINERS (BANNER E PÁGINAS)
+   ========================================= */
+.banner, .main-container-cadastro {
+    width: 900px;
+    height: 500px;
+    background-color: #d4a031; /* Amarelo Ouro do Layout */
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-bottom: 40px solid #003366; /* Faixa Azul Inferior */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* Ajuste para páginas de formulário/serviços que podem crescer verticalmente */
+.main-container-cadastro {
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
+}
+
+/* =========================================
+   TELA 1: BANNER INICIAL (HOME)
+   ========================================= */
+.image-section {
+    width: 55%;
+    height: 100%;
+    background-image: url('Captura de tela 2026-02-25 143533.jpg'); /* Aluna com CNH */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Corte Curvado que invade a imagem */
+.image-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 200px;
+    height: 100%;
+    background-color: #d4a031;
+    border-radius: 50% 0 0 50%;
+    z-index: 2;
+}
+
+.content-section {
+    width: 45%;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+    color: white;
+}
+
+/* =========================================
+   TELAS 2 E 3: FORMULÁRIO E SERVIÇOS
+   ========================================= */
+.form-padding {
+    padding: 30px 150px; /* Centraliza o conteúdo nas páginas internas */
+    flex-grow: 1;
+    z-index: 5;
+}
+
+.input-group {
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    display: block;
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.4); /* Fundo translúcido do layout */
+    color: #003366;
+    font-weight: bold;
+}
+
+.input-group input::placeholder {
+    color: rgba(0, 51, 102, 0.6);
+}
+
+/* Botões da Página de Serviços */
+.btn-servico {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #003366;
+    text-decoration: none;
+    text-align: center;
+    padding: 18px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.btn-servico:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   COMPONENTES GERAIS (BOTÕES E ÍCONES)
+   ========================================= */
+h1 {
+    font-size: 2.8rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #003366;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.btn-universal {
+    background-color: #e5c687; /* Bege do botão Cadastre-se/Confirmar */
+    color: #003366;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.btn-universal:hover {
+    background-color: #f0d8a8;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão confirmar com o círculo de check */
+.btn-confirmar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    border-radius: 8px;
+}
+
+/* Bloco Branco com Ícone do Carro */
+.icon-box {
+    background-color: white;
+    width: 90px;
+    height: 110px;
+    border-radius: 0 0 15px 15px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.icon-car {
+    width: 55px;
+    height: 55px;
+    background-color: #ffcc00; /* Cor amarela do ícone do carro */
+    -webkit-mask: url('https://cdn-icons-png.flaticon.com/512/741/741407.png') no-repeat center;
+    mask: url('https://cdn-icons-png.flaticon.com/512/741/741407.png') no-repeat center;
+    mask-size: contain;
+}
